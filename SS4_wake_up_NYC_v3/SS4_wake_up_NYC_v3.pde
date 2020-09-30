@@ -24,7 +24,18 @@ void draw(){
   image(bg_sky, width/2, height/2);
 
   //makes stars  
-  fill(255, 255, 242, 100);
+  
+  
+  //rounds of stars
+  fill(245, 247, 126);
+  for(int i = 0; i <= 100; i++){
+    circle(random(1080), random(200), 5);
+  }
+  
+  //star cores --> constantly in place
+  circle(125, 25, 5);
+  circle(575, 150, 5);
+  circle(990, 55, 5);
   
   //shining star light
   if(shine >= 25 || shine <= 15){
@@ -33,21 +44,10 @@ void draw(){
   else{
     shine += -5;
   }
-  
+  fill(255, 255, 242, 100);
   circle(125, 25, shine);
   circle(575, 150, shine);
   circle(990, 55, shine);
-  
-  //rounds of stars
-  fill(245, 247, 126);
-  for(int i = 0; i <= 100; i++){
-    circle(random(1080), random(200), 5);
-  }
-  
-  //star cores --> previous star itteration
-  circle(125, 25, 5);
-  circle(575, 150, 5);
-  circle(990, 55, 5);
   
   image(building, width/2, height/2); //foreground building
   
