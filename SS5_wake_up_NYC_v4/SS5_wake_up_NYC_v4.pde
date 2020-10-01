@@ -6,8 +6,14 @@
 int clicked = 0;
 int shine = 15;
 
+int currentTime = 0;
+int timer = 0;
+int half_second = 500;
+
 PImage bg_sky;
 PImage building;
+PImage[] dialogue_Bubbles = new PImage[3];
+String[] text_images = {"text_1.png", "text_2.png", "text_3.png"};
 
 void setup(){
   size(1080, 720);
@@ -16,9 +22,15 @@ void setup(){
   
   bg_sky = loadImage("starry_sky.jpg");
   building = loadImage("building1.png");
+  for(int i = 0; i <= text_images.length - 1; i++){
+    dialogue_Bubbles[i] = loadImage(text_images[i]);
+  }
 }
 
 void draw(){
+  //setting current time to internal counter
+  currentTime = millis();
+  
   //scene building
    noStroke();
   image(bg_sky, width/2, height/2); //uses iimage for background
@@ -151,7 +163,9 @@ void click(int clicked){
     break;
     
     case 9:
-      text("place holder", width/2, height/2);
+      image(dialogue_Bubbles[0], width/2, height/2);
+      image(dialogue_Bubbles[1], width/2, height/2);
+      image(dialogue_Bubbles[2], width/2, height/2);
     break;
     
     default:
