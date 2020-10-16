@@ -23,11 +23,12 @@ void setup(){
     background[i] = loadImage(imageList[i]);
   }
   
-  currentTime = millis();
   noStroke();
 }
 
 void draw(){
+  
+  currentTime = millis();
   
   if(scene == 0){
     scene1();
@@ -71,13 +72,15 @@ void shiny_stars(int x, int y){
   circle(x, y, shine);
 }
 
-void move_Right(int i, int increment){
-  image(background[i], width/2 + increment, height/2);
-  
+void move_Right(int i, int increment, int end, int respawn){
+    image(background[i], width/2 + increment, height/2);
+    increment += increment;
 }
 
 void scene1(){
   image(background[0], width/2, height/2);
+  
+  move_Right(4, 5, 1080, 0);
   
   rounds_of_stars(75, 50);
   
