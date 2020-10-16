@@ -71,6 +71,11 @@ void shiny_stars(int x, int y){
   circle(x, y, shine);
 }
 
+void move_Right(int i, int increment){
+  image(background[i], width/2 + increment, height/2);
+  
+}
+
 void scene1(){
   image(background[0], width/2, height/2);
   
