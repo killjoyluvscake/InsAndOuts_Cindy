@@ -36,7 +36,7 @@ void scene2(){
   
   fill(255);
   textSize(25);
-  text("click the faerie", width/2, height - 50);
+  text("(click to catch the faerie before time runs out)", width/2, height - 50);
   
   image(faerie, x, y);
 }

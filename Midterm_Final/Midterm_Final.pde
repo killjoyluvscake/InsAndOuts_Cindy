@@ -18,6 +18,9 @@ int currentTime = 0;
 int savedTime = 0;
 int startTime;
 int timer = 350;
+int countDown;
+int triggerTime;
+int timer2 = 2500;
 
 int click = 0;
 int limit = 25;
@@ -65,6 +68,7 @@ void draw(){
   }
   else if(scene == 1){
     scene2();
+    countDown();
     play_game();
   }
   else if(scene == 2){
@@ -79,12 +83,18 @@ void draw(){
 void mousePressed(){
   if(scene == 1){
   click++;
-  }
+  triggerTime = currentTime;
   clicked(click);
+  }
+  else if(scene == 2){
+    scene = 0;
+  }
+  
 }
 
 void keyPressed(){
   if(scene == 0 && (key == ENTER || key == RETURN)){
+    startTime = currentTime;
     scene = 1;
   }
 }
