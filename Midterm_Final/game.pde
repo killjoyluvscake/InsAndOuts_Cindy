@@ -12,14 +12,7 @@ void play_game(){
 
 //defines what happens after you click; separated into three levels + final mode
 void clicked(int click){
-  if(click == limit){
-    if(currentTime-triggerTime < 3000){
-      image(red[4], width/2, height/2);
-    }
-    else
-      gameOver();
-  }
-  else if(click >= 20 && click < limit){
+  if(click >= 20 && click < limit){
     text_red(random);
   }
   else if(click >= 10 && click < 20){

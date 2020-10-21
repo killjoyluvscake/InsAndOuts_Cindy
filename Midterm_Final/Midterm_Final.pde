@@ -23,7 +23,8 @@ int startTime;
 int timer = 350;
 int countDown;
 int triggerTime;
-int timer2 = 2500;
+int timer2 = 2000;
+int timer3 = 3000;
 
 //text bubble variables
 int click = 0;
@@ -82,7 +83,16 @@ void draw(){
     if(currentTime-triggerTime < timer2){
       clicked(click); //calls up random text bubbles
     }
-  }
+    
+    //final bubble
+    if(click == limit){
+      if(currentTime-triggerTime < timer3){
+        image(red[4], width/2, height/2);
+      }
+      else if(currentTime-triggerTime > timer3)
+        gameOver();
+      }
+    }
   else if(scene == 2){
     gameOver(); //calls game over screen
   }
