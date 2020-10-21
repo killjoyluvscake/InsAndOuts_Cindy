@@ -2,15 +2,12 @@
 //Date: 10.21.2020
 //Title: Wake Up NYC_Midterm_Edition
 
-String[] imageList = 
-{"sunset_sky.jpg", "sunset_building.png", "starry_sky.jpg", "building1.png", 
-"sunset_cloud1.png", "sunset_cloud2.png", "sunset_cloud3.png", "sunset_cloud4.png",
-"sunset_cloud5.png", "sunset_cloud6.png", "sunset_cloud7.png"};
-PImage[] background = new PImage[12];
+String[] imageList = {"sunset_sky.jpg", "starry_sky.jpg", "building1.png"};
+PImage[] background = new PImage[3];
 
-int shine = 15;
-
-int currentTime;
+int currentTime = 0;
+int savedTime = 0;
+int timer = 250;
 
 int scene = 0;
 
@@ -53,55 +50,36 @@ void mousePressed(){
 void rounds_of_stars(int amount, int height_amt){
   fill(245, 247, 126);
   for(int i = 0; i <= amount; i++){
-    circle(random(width), random(height_amt), 3);
+  circle(random(width), random(height_amt), 3);
   }
 }
 
-void shiny_stars(int x, int y){
-  fill(245, 247, 126);
-  circle(x, y, 5);
-  
-  fill(255, 255, 242, 100);
-  if(shine >= 25 || shine <= 15){
-    shine += 5;
-  }
-  else{
-    shine += -5;
-  }
-  
-  circle(x, y, shine);
-}
-
-void move_Right(int i, int increment, int end, int respawn){
-    image(background[i], width/2 + increment, height/2);
-    increment += increment;
-}
-
+//sets up scene one
 void scene1(){
-  image(background[0], width/2, height/2);
-  
-  move_Right(4, 5, 1080, 0);
-  
-  rounds_of_stars(75, 50);
-  
-  image(background[1], width/2, height/2);  
-    
-  delay(250);
+  if(currentTime - savedTime > timer){
+    image(background[0], width/2, height/2);
+    rounds_of_stars(75, 50);
+    savedTime = currentTime;
+  }
 }
 
+//sets up scene 2
 void scene2(){
+  if(currentTime - savedTime > timer){
+    image(background[1], width/2, height/2);
+    rounds_of_stars(150, 150);
+    savedTime = currentTime;
+  }
+  
   image(background[2], width/2, height/2);
-  
-  rounds_of_stars(150, 150);
-  
-  image(background[3], width/2, height/2);
-
-  delay(250);
 }
 
+//game over screen
 void gameOver(){
   background(0);
   fill(255);
   textSize(100);
   text("Game Over", width/2, height/2);
+  textSize(50);
+  text("(click to restart)", width/2, height/2 + 200);
 }
