@@ -10,7 +10,7 @@ void play_game(){
   }
 }
 
-//defines what happens after you click; separated into three levels
+//defines what happens after you click; separated into three levels + final mode
 void clicked(int click){
   if(click == limit){
     if(currentTime-triggerTime < 3000){
@@ -30,6 +30,7 @@ void clicked(int click){
   }
 }
 
+//takes random number 0-4
 void text_green(int random){
   switch(random){
     case 0:
@@ -54,6 +55,7 @@ void text_green(int random){
   }
 }
 
+//takes random number 0-4
 void text_yellow(int random){
   switch(random){
     case 0:
@@ -78,6 +80,7 @@ void text_yellow(int random){
   }
 }
 
+//takes random number 0-3
 void text_red(int random){
   switch(random){
     case 0:
@@ -98,6 +101,7 @@ void text_red(int random){
   }
 }
 
+//30s timer on bottom of screne
 void countDown(){
   fill(255);
   countDown = ((startTime + 30000)-currentTime)/1000;

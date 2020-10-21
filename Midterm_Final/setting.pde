@@ -6,7 +6,7 @@ void rounds_of_stars(int amount, int height_amt){
   }
 }
 
-//sets up scene one
+//opening scenery with sunset background
 void scene1(){
   //background
   if(currentTime - savedTime > timer){
@@ -23,7 +23,7 @@ void scene1(){
   text("(press enter to start)", width/2, height/2+50);
 }
 
-//sets up scene 2
+//game scenery with starry sky background
 void scene2(){
   //background
   if(currentTime - savedTime > timer){

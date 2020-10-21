@@ -48,15 +48,15 @@ void setup(){
     background[i] = loadImage(imageList[i]);
   }
   
-  for(int i = 0; i <= green.length - 1; i++){
+  for(int i = 0; i < green.length; i++){
     green[i] = background[4 + i];
   }
   
-  for(int i = 0; i <= yellow.length - 1; i++){
+  for(int i = 0; i < yellow.length; i++){
     yellow[i] = background[9 + i];
   }
   
-  for(int i = 0; i <= red.length - 1; i++){
+  for(int i = 0; i < red.length; i++){
     red[i] = background[14 + i];
   }
   
@@ -119,7 +119,7 @@ void mousePressed(){
   }
 }
 
-//starts counter timer and starts the game
+//starts countdown timer and starts the game
 void keyPressed(){
   if(scene == 0 && (key == ENTER || key == RETURN)){
     startTime = currentTime;
