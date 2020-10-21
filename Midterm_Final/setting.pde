@@ -45,6 +45,7 @@ void scene2(){
 void gameOver(){
   background(0);
   
+  scene = 2;
   click = 0;
   
   fill(255);
