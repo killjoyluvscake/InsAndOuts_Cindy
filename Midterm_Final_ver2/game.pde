@@ -4,7 +4,7 @@ void play_game(){
   
   d = dist(x, y, mouseX, mouseY);
   
-  if(d <= 50){
+  if(d <= 150){
     x = random(50, width-50);
     y = random(75, height-100);
   }

@@ -78,7 +78,6 @@ void draw(){
   }
   else if(scene == 1){
     scene2(); //stage 2
-    countDown(); //on screen timer set to 30s
     play_game(); //impossible game of catch the faerie
     if(currentTime-triggerTime < timer2){
       clicked(click); //calls up random text bubbles
