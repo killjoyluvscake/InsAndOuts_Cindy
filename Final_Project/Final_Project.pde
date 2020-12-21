@@ -4,7 +4,7 @@ Serial myPort; // creates object from Serial class
 int val=0; // creates variable for data coming from serial port
 int begin = 1;
 
-String[] imageList = {"start.png","curtains.png"};
+String[] imageList = {"button_1.png","curtains_1.png"};
 
 PImage[] imageSet = new PImage[2];
 PImage startButton, curtains;
